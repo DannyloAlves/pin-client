@@ -1,12 +1,9 @@
 import "./styles/GlobalStyles";
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
+import React, { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router";
-import MainLayout from './routes/layouts/mainLayout';
-import {
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query';
+import MainLayout from "./routes/layouts/mainLayout";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const Homepage = React.lazy(() => import("./routes/homepage"));
 const CreatePage = React.lazy(() => import("./routes/createPage"));
@@ -17,7 +14,7 @@ const AuthPage = React.lazy(() => import("./routes/authPage"));
 
 const queryClient = new QueryClient();
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById("root")).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
